@@ -1,0 +1,19 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%="http://source.unsplash.com/featured/?#{@restaurant.category}-restaurant>&#{rand(1000)}"%>">
+  <div class="container">
+    <h1><%= @restaurant.name %>!</h1>
+    <p> come to the best <strong><%= @restaurant.category %></strong> restaurant in <%= @restaurant.address %></p>
+      <%= link_to "Add review", new_restaurant_review_path(@restaurant), class: "cbtn btn-flat" %>
+      <%= link_to '🗑️', restaurant_path(@restaurant), class: "cbtn btn-flat", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+  </div>
+</div>
+
+
+<% @restaurant.reviews.each do |review| %>
+<div class="card-product">
+  <img src="<%="http://source.unsplash.com/featured/?avatar>&#{rand(1000)}"%>" />
+  <div class="card-product-infos">
+    <h2>Review of <%= @restaurant.name %> </h2>
+    <p><%= review.content%>  <strong>Rating: <%= "⭐️" *review.rating%></strong></p>
+  </div>
+</div>
+<% end %>
