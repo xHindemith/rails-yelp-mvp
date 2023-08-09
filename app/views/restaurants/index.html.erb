@@ -1,15 +1,17 @@
-<div class="container">
-
-  <h1 id="h1-centered">Restaurant overview 👩‍🍳</h1>
-
-  <%= link_to "Add a new restaurant", new_restaurant_path, class: "btn btn-flat",  id: "create-restaurant-btn" %>
-
-<div class="cards">
-<% @restaurants.each do |restaurant| %>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%="http://source.unsplash.com/featured/?#{restaurant.category}-restaurant>&#{rand(1000)}" %>)">
-    <%= link_to restaurant.name, restaurant_path(restaurant), class: "card-link" %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%="http://source.unsplash.com/featured/?skyline>&#{rand(1000)}" %>)">
+  <div class="container-banner">
+    <h1>Restaurant overview</h1>
+    <p>Check out the best restaurants in town!</p>
+    <%= link_to "Add a new restaurant", new_restaurant_path, class: "btn btn-flat" %>
   </div>
-  <% end %>
 </div>
 
+<div class="container">
+  <div class="cards">
+    <% @restaurants.each do |restaurant| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%="http://source.unsplash.com/featured/?#{restaurant.category}-restaurant>&#{rand(1000)}" %>)">
+        <%= link_to restaurant.name, restaurant_path(restaurant), class: "card-link" %>
+      </div>
+      <% end %>
+  </div>
 </div>

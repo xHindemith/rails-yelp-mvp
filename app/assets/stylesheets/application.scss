@@ -24,6 +24,30 @@ margin: 20px;
   grid-gap: 16px;
 }
 
+.container {
+  max-width: 90%;
+}
+
+.container-banner {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background: white;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+
 #create-restaurant-btn {
  align-items: center;
  justify-content: center;
@@ -60,6 +84,7 @@ margin: 20px;
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  margin-bottom: 20px;
 }
 
 .banner h1 {
